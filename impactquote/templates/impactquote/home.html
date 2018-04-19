@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+<html>
+<!-- Latest compiled and minified CSS -->
+<style>
+    body {
+      margin-left:20px;
+          }
+    p
+    {
+    font-size:23px;
+    font-family: 'Pacifico', cursive;
+    }
+
+    .container
+    {
+    background-color:#826682 ;
+    padding-top:15px;
+    padding-bottom:15px;
+    }
+    .container:hover {
+    background-color: yellow;
+}
+button:hover
+{
+background-color:red;
+}
+</style>
+
+<body style="background-color:#CD9ACD;">
+<center><p style="font-family: 'Luckiest Guy', cursive;font-size:90px;"> Impact Quote </p></center>
+<br><br>
+<center>
+<form method="POST" action="" >
+    {% csrf_token %}
+{{form.as_p}}
+<input type="submit" value='Create quote'/>
+</form>
+</center>
+    <br><br>
+<center>
+<form method="GET" action="">
+    <input type="text" placeholder="keyword of Movie/Quote " name="q"/>
+    <input type="submit" value="Search"/>
+
+</form>
+    </center>
+{% for q in list%}
+<div class="container">
+<br>
+<p >{{q.quote}}<br><br> - {{q.movie}}</body>
+<br>
+    </div>
+<br>
+{% endfor %}
+</body>
+</html>
